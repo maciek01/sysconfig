@@ -32,5 +32,6 @@ export PYTHONASYNCIODEBUG=1
 
 #sync config
 cd ~/sysconfig/$HOSTNAME
+git status
 git pull
 cd

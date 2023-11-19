@@ -26,7 +26,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export PYTHONASYNCIODEBUG=1
+#export PYTHONASYNCIODEBUG=1
 
 
 

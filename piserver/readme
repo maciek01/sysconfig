@@ -1,0 +1,36 @@
+
+VIDEOSREAM:
+not active anymore replaced by janus
+
+JANUS:
+
+make sure janus is running on 8088
+
+OLD:
+see /etc/rc.local
+
+NEW via snapd
+
+https://snapcraft.io/install/janus-gateway/raspbian
+
+make sure to enable 8004 in /var/snap/janus-gateway/common/etc/janus.plugin.streaming.jcfg
+
+also enable stun server and port in /var/snap/janus-gateway/common/etc/janus.jcfg
+
+
+GTREAMER:
+see /etc/rc.local
+used for ??????
+
+
+REGISTRY:
+
+insecure registry access
+
+https://stackoverflow.com/questions/42211380/add-insecure-registry-to-docker
+
+https://docs.docker.com/registry/
+
+https://github.com/JonasVautherin/px4-gazebo-headless
+
+

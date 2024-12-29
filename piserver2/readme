@@ -1,0 +1,21 @@
+
+expected content
+
+
+total 31324
+    4 drwxr-xr-x  3 root root     4096 Jul  5  2017 ..
+    4 -rw-r--r--  1 pi   pi       3512 Jul  5  2017 .bashrc
+    4 -rw-r--r--  1 pi   pi        220 Jul  5  2017 .bash_logout
+    4 drwxr-xr-x  4 pi   pi       4096 Apr  2  2018 uavgroundstation
+    4 -rw-r--r--  1 pi   pi         53 Apr  3  2018 .gitconfig
+    4 drwxr-xr-x  5 pi   pi       4096 Apr  7  2019 uavserver
+    4 -rw-------  1 pi   pi         93 Apr  4  2021 .lesshst
+    4 drwx------  3 pi   pi       4096 Nov 25  2022 .gnupg
+    4 drwx------  3 pi   pi       4096 Nov 25  2022 .config
+    0 lrwxrwxrwx  1 pi   pi         21 Nov 27  2022 docker-cleanup.sh -> bin/docker-cleanup.sh
+    4 -rw-r--r--  1 pi   pi        720 Oct 21  2023 .profile
+    4 drwxr-xr-x  2 pi   pi       4096 Dec 28 17:11 .ssh
+   24 -rw-------  1 pi   pi      19658 Dec 29 16:00 .bash_history
+    4 drwxr-xr-x 13 pi   pi       4096 Dec 29 16:26 sysconfig
+    0 lrwxrwxrwx  1 pi   pi         23 Dec 29 16:27 bin -> sysconfig/piserver2/bin
+    4 drwxr-xr-x  8 pi   pi       4096 Dec 29 16:27 .

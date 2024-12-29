@@ -19,3 +19,11 @@ total 31324
     4 drwxr-xr-x 13 pi   pi       4096 Dec 29 16:26 sysconfig
     0 lrwxrwxrwx  1 pi   pi         23 Dec 29 16:27 bin -> sysconfig/piserver2/bin
     4 drwxr-xr-x  8 pi   pi       4096 Dec 29 16:27 .
+
+
+
+
+CONTAINER ID   IMAGE                 COMMAND                  CREATED       STATUS        PORTS                                                           NAMES
+ac9c8293eb9f   nginx                 "nginx -g 'daemon of…"   2 years ago   Up 22 hours   0.0.0.0:8000->80/tcp, :::8000->80/tcp                           groundstation-nginx
+1b30a4589e48   9af9e5704980          "/usr/bin/entry.sh n…"   2 years ago   Up 22 hours   0.0.0.0:9091->9000/tcp, :::9091->9000/tcp                       pi-uavserver
+974be6388ec9   portainer/portainer   "/portainer"             2 years ago   Up 22 hours   8000/tcp, 9443/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp   pi-portainer

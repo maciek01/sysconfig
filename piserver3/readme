@@ -21,7 +21,9 @@ docker version
 
 sudo apt install docker-compose
 
+INSTALL JQ
 
+sudo apt install jq
 
 CLONE CHIRPSTACK
 

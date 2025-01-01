@@ -1,11 +1,11 @@
 
-AUTH="Grpc-Metadata-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjaGlycHN0YWNrIiwiaXNzIjoiY2hpcnBzdGFjayIsInN1YiI6IjkzMjUzZjg5LWYwNzYtNDM1Yi05OTU5LWU0ZWRhNmU4OTg2YSIsInR5cCI6ImtleSJ9.DAUeezHMGN1m7mmMXOqkbr3uro0y8sHkIQ9wHrCstEM"
 
 KEY="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjaGlycHN0YWNrIiwiaXNzIjoiY2hpcnBzdGFjayIsInN1YiI6IjkzMjUzZjg5LWYwNzYtNDM1Yi05OTU5LWU0ZWRhNmU4OTg2YSIsInR5cCI6ImtleSJ9.DAUeezHMGN1m7mmMXOqkbr3uro0y8sHkIQ9wHrCstEM"
+
 AUTH="Grpc-Metadata-Authorization: Bearer "$KEY
 
 
-curl -X 'POST' \
+RESP=$(curl -X 'POST' \
   'http://piserver3:8090/api/tenants' \
   -H 'accept: application/json' \
   -H "${AUTH}" \
@@ -26,15 +26,18 @@ curl -X 'POST' \
       "additionalProp3": "string"
     }
   }
-}'
+}')
 
-res={ "id": "48a2aa5d-287b-420b-9c07-54c3ebe16369" }
+TENANT_ID=$(jq -r  .id <<< ${RESP})
+echo TENANT_ID=$TENANT_ID
+
+#res={ "id": "48a2aa5d-287b-420b-9c07-54c3ebe16369" }
 
 
-curl -X 'POST' \
+RESP=$(curl -X 'POST' \
   'http://piserver3:8090/api/applications' \
   -H 'accept: application/json' \
-  -H 'Grpc-Metadata-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjaGlycHN0YWNrIiwiaXNzIjoiY2hpcnBzdGFjayIsInN1YiI6IjkzMjUzZjg5LWYwNzYtNDM1Yi05OTU5LWU0ZWRhNmU4OTg2YSIsInR5cCI6ImtleSJ9.DAUeezHMGN1m7mmMXOqkbr3uro0y8sHkIQ9wHrCstEM' \
+  -H "${AUTH}" \
   -H 'Content-Type: application/json' \
   -d '{
   "application": {
@@ -45,24 +48,25 @@ curl -X 'POST' \
       "additionalProp2": "string",
       "additionalProp3": "string"
     },
-    "tenantId": "48a2aa5d-287b-420b-9c07-54c3ebe16369"
+    "tenantId": "'$TENANT_ID'"
   }
-}'
-res={"id":"d2a445af-08c1-408c-8d5e-1ecc18fbba26"}
+}')
+
+APP_ID=$(jq -r  .id <<< ${RESP})
+echo APP_ID=$APP_ID
+
+#res={"id":"d2a445af-08c1-408c-8d5e-1ecc18fbba26"}
 
 
-
-
-
-curl -X 'POST' \
+RESP=$(curl -X 'POST' \
   'http://piserver3:8090/api/gateways' \
   -H 'accept: application/json' \
-  -H 'Grpc-Metadata-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjaGlycHN0YWNrIiwiaXNzIjoiY2hpcnBzdGFjayIsInN1YiI6IjkzMjUzZjg5LWYwNzYtNDM1Yi05OTU5LWU0ZWRhNmU4OTg2YSIsInR5cCI6ImtleSJ9.DAUeezHMGN1m7mmMXOqkbr3uro0y8sHkIQ9wHrCstEM' \
+  -H "${AUTH}" \
   -H 'Content-Type: application/json' \
   -d '{
   "gateway": {
 
-    "tenantId": "48a2aa5d-287b-420b-9c07-54c3ebe16369",
+    "tenantId": "'$TENANT_ID'",
     "gatewayId": "00005813d3165dfb",
     "name": "browan1",
     "description": "",
@@ -89,19 +93,20 @@ curl -X 'POST' \
       "additionalProp3": "string"
     }
   }
-}'
-res={}
+}')
+
+#res={}
 
 
 
-curl -X 'POST' \
+RESP=$(curl -X 'POST' \
   'http://piserver3:8090/api/device-profiles' \
   -H 'accept: application/json' \
-  -H 'Grpc-Metadata-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjaGlycHN0YWNrIiwiaXNzIjoiY2hpcnBzdGFjayIsInN1YiI6IjkzMjUzZjg5LWYwNzYtNDM1Yi05OTU5LWU0ZWRhNmU4OTg2YSIsInR5cCI6ImtleSJ9.DAUeezHMGN1m7mmMXOqkbr3uro0y8sHkIQ9wHrCstEM' \
+  -H "${AUTH}" \
   -H 'Content-Type: application/json' \
   -d '{
   "deviceProfile": {
-      "tenantId": "48a2aa5d-287b-420b-9c07-54c3ebe16369",
+      "tenantId": "'$TENANT_ID'",
       "name": "esp32-s3-rfm9x",
       "region": "US915",
       "macVersion": "LORAWAN_1_0_3",
@@ -111,21 +116,21 @@ curl -X 'POST' \
       "supportsClassC": false
 
   }
-}'
-res={"id":"7f6c09b3-68d0-47af-8e45-415c0d94a87c"}
+}')
+DEVP_ID=$(jq -r  .id <<< ${RESP})
+echo DEVP_ID=$DEVP_ID
+#res={"id":"7f6c09b3-68d0-47af-8e45-415c0d94a87c"}
 
 
-
-
-curl -X 'POST' \
+RESP=$(curl -X 'POST' \
   'http://piserver3:8090/api/devices' \
   -H 'accept: application/json' \
-  -H 'Grpc-Metadata-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjaGlycHN0YWNrIiwiaXNzIjoiY2hpcnBzdGFjayIsInN1YiI6IjkzMjUzZjg5LWYwNzYtNDM1Yi05OTU5LWU0ZWRhNmU4OTg2YSIsInR5cCI6ImtleSJ9.DAUeezHMGN1m7mmMXOqkbr3uro0y8sHkIQ9wHrCstEM' \
+  -H "${AUTH}" \
   -H 'Content-Type: application/json' \
   -d '{
   "device": {
-    "applicationId": "d2a445af-08c1-408c-8d5e-1ecc18fbba26",
-    "deviceProfileId": "7f6c09b3-68d0-47af-8e45-415c0d94a87c",
+    "applicationId": "'$APP_ID'",
+    "deviceProfileId": "'$DEVP_ID'",
     "name": "esp32-s3-rfm9x",
     "description": "my device",
     "isDisabled": false,
@@ -136,5 +141,6 @@ curl -X 'POST' \
     "nwkKey": "d2a438a643017caa73d7fb74532152b6",
     "joinEui": "0000000000000000"
   }
-}'
-res={}
+}')
+echo CREATE DEVICE: $RESP
+#res={}

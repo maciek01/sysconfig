@@ -86,7 +86,7 @@ RESP=$(curl -X 'POST' \
       "additionalProp2": "string",
       "additionalProp3": "string"
     },
-    "statsInterval": 0,
+    "statsInterval": 120,
     "tags": {
       "additionalProp1": "string",
       "additionalProp2": "string",

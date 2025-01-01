@@ -1,6 +1,8 @@
 
 
-KEY="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjaGlycHN0YWNrIiwiaXNzIjoiY2hpcnBzdGFjayIsInN1YiI6IjkzMjUzZjg5LWYwNzYtNDM1Yi05OTU5LWU0ZWRhNmU4OTg2YSIsInR5cCI6ImtleSJ9.DAUeezHMGN1m7mmMXOqkbr3uro0y8sHkIQ9wHrCstEM"
+#KEY="<API KEY>"
+
+KEY=$1
 
 AUTH="Grpc-Metadata-Authorization: Bearer "$KEY
 

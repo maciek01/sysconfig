@@ -1,0 +1,32 @@
+
+
+
+
+
+EXPECTED CONTENT
+
+
+
+
+
+INSTALL DOCKER
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo usermod -aG docker pi
+
+docker version
+
+sudo apt install docker-compose
+
+
+
+CLONE CHIRPSTACK
+
+got clone git@github.com:maciek01/chirpstack-docker.git
+
+start service
+
+docker-compose up -d

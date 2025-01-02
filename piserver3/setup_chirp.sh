@@ -113,6 +113,7 @@ RESP=$(curl -X 'POST' \
       "region": "US915",
       "macVersion": "LORAWAN_1_0_3",
       "regParamsRevision": "A",
+      "uplinkInterval": 20,
       "supportsOtaa": true,
       "supportsClassB": false,
       "supportsClassC": false
@@ -138,11 +139,33 @@ RESP=$(curl -X 'POST' \
     "isDisabled": false,
     "skipFcntCheck": true,
     "devEui": "ab493c97ea90bed3",
-    "appKey": "d2a438a643017caa73d7fb74532152b6",
     "appEui": "0000000000000000",
-    "nwkKey": "d2a438a643017caa73d7fb74532152b6",
     "joinEui": "0000000000000000"
   }
 }')
 echo CREATE DEVICE: $RESP
 #res={}
+
+
+
+RESP=$(curl -X 'POST' \
+  'http://piserver3:8090/api/devices/ab493c97ea90bed3/keys' \
+  -H 'accept: application/json' \
+  -H "${AUTH}" \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "deviceKeys": {
+    "appKey": "d2a438a643017caa73d7fb74532152b6",
+    "nwkKey": "d2a438a643017caa73d7fb74532152b6"
+  }
+}')
+
+echo CREATE DEVICE KEYS: $RESP
+
+
+
+
+
+
+
+

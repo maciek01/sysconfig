@@ -50,6 +50,10 @@ make sure to enable 8004 in /var/snap/janus-gateway/common/etc/janus.plugin.stre
 
 also enable stun server and port in /var/snap/janus-gateway/common/etc/janus.jcfg
 
+logs:
+less /var/log/syslog|grep janus
+
+
 
 GTREAMER:
 see /etc/rc.local - linked to etc/rc.local

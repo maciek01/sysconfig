@@ -59,4 +59,4 @@
 
 #gst-launch-1.0 -e libcamerasrc ! video/x-raw, bitrate=500000, nopreview, profile=baseline, inline, width=640, height=480, framerate=15/1, rotation=180, lens-position=0.0, autofocus-mode=manual  ! clockoverlay time-format="%D %H:%M:%S" ! jpegenc ! jpegparse ! rtspclientsink protocols=tcp sync=false location=rtsp://home.kolesnik.org:8554/mystream
 
-gst-launch-1.0 -e libcamerasrc ! video/x-raw, width=640, height=480, framerate=15/1, rotation=180, bitrate=500000, nopreview=true, profile=baseline, inline=true, lens-position=0.0, autofocus-mode=manual ! clockoverlay time-format="%D %H:%M:%S" ! jpegenc ! jpegparse ! rtspclientsink protocols=tcp sync=false location=rtsp://home.kolesnik.org:8554/mystream
+gst-launch-1.0 -e libcamerasrc ! video/x-raw, width=640, height=480, framerate=15/1, rotation=180, bitrate=500000, nopreview=true, profile=baseline, inline=true, lens-position=0.0, autofocus-mode=manual, auto-focus-mode=off ! clockoverlay time-format="%D %H:%M:%S" ! jpegenc ! jpegparse ! rtspclientsink protocols=tcp sync=false location=rtsp://home.kolesnik.org:8554/mystream

@@ -325,16 +325,54 @@ h264-sample: {
 
 
 
-rtsp-test: {
+uav1-rtsp: {
         type = "rtsp"
         id = 99
         description = "RTSP Test"
         audio = false
         video = true
-        url = "rtsp://127.0.0.1:8555/uav1"
-        rtsp_user = "username"
-        rtsp_pwd = "password"
-        secret = "adminpwd"
+        url = "rtsp://piserver3:8554/uav1"
+        rtsp_reconnect_delay = 5
+        rtsp_session_timeout = 0
+        rtsp_timeout = 10
+        rtsp_conn_timeout = 5
+}
+
+uav6-rtsp: {
+        type = "rtsp"
+        id = 99
+        description = "RTSP Test"
+        audio = false
+        video = true
+        url = "rtsp://piserver3:8554/uav6"
+        rtsp_reconnect_delay = 5
+        rtsp_session_timeout = 0
+        rtsp_timeout = 10
+        rtsp_conn_timeout = 5
+}
+
+
+
+uav7-rtsp: {
+        type = "rtsp"
+        id = 99
+        description = "RTSP Test"
+        audio = false
+        video = true
+        url = "rtsp://piserver3:8554/uav7"
+        rtsp_reconnect_delay = 5
+        rtsp_session_timeout = 0
+        rtsp_timeout = 10
+        rtsp_conn_timeout = 5
+}
+
+uav8-rtsp: {
+        type = "rtsp"
+        id = 99
+        description = "RTSP Test"
+        audio = false
+        video = true
+        url = "rtsp://piserver3:8554/uav8"
         rtsp_reconnect_delay = 5
         rtsp_session_timeout = 0
         rtsp_timeout = 10

@@ -340,7 +340,7 @@ uav1-rtsp: {
 
 uav6-rtsp: {
         type = "rtsp"
-        id = 99
+        id = 100
         description = "RTSP Test"
         audio = false
         video = true
@@ -355,7 +355,7 @@ uav6-rtsp: {
 
 uav7-rtsp: {
         type = "rtsp"
-        id = 99
+        id = 101
         description = "RTSP Test"
         audio = false
         video = true
@@ -368,7 +368,7 @@ uav7-rtsp: {
 
 uav8-rtsp: {
         type = "rtsp"
-        id = 99
+        id = 102
         description = "RTSP Test"
         audio = false
         video = true

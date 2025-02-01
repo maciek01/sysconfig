@@ -59,4 +59,17 @@
 
 #gst-launch-1.0 -e libcamerasrc ! video/x-raw, bitrate=500000, nopreview, profile=baseline, inline, width=640, height=480, framerate=15/1, rotation=180, lens-position=0.0, autofocus-mode=manual  ! clockoverlay time-format="%D %H:%M:%S" ! jpegenc ! jpegparse ! rtspclientsink protocols=tcp sync=false location=rtsp://home.kolesnik.org:8554/mystream
 
-gst-launch-1.0 -e libcamerasrc ! video/x-raw, width=640, height=480, framerate=15/1, rotation=180, bitrate=500000, nopreview=true, profile=baseline, inline=true, lens-position=0.0, autofocus-mode=manual, auto-focus-mode=off ! clockoverlay time-format="%D %H:%M:%S" ! jpegenc ! jpegparse ! rtspclientsink protocols=tcp sync=false location=rtsp://home.kolesnik.org:8554/mystream
+#best so far
+#gst-launch-1.0 -e libcamerasrc ! video/x-raw, width=640, height=480, framerate=2/1, rotation=0, bitrate=500000, nopreview=true, profile=baseline, inline=true, lens-position=0.0, autofocus-mode=manual, auto-focus-mode=off ! clockoverlay time-format="%D %H:%M:%S" ! jpegenc ! jpegparse ! rtspclientsink protocols=tcp sync=false location=rtsp://home.kolesnik.org:8554/uav6
+
+
+#good to fix 4 sec delay , 30kbps
+libcamera-vid -v 0 -t 0 --lens-position=0.0 --autofocus-mode=manual --nopreview --framerate 10 --codec h264 --bitrate 250000 --profile baseline --rotation 0  --width 640 --height 480 --inline  -o - | gst-launch-1.0 fdsrc ! queue ! video/x-h264, width=640, height=480, format=I420, framerate=10/1, bitrate=250000 ! h264parse ! rtspclientsink protocols=tcp sync=false location=rtsp://home.kolesnik.org:8554/uav6
+
+#too much bandwidth  - works though
+#libcamera-vid -v 0 -t 0 --lens-position=0.0 --autofocus-mode=manual --nopreview --framerate 10 --codec h264 --bitrate 250000 --profile baseline --rotation 0  --width 640 --height 480 --inline  -o - | gst-launch-1.0 fdsrc ! queue ! video/x-h264, width=640, height=480, format=I420, framerate=10/1, bitrate=250000 ! decodebin ! videoconvert ! clockoverlay time-format="%D %H:%M:%S" ! jpegenc ! jpegparse ! rtspclientsink protocols=tcp sync=false location=rtsp://home.kolesnik.org:8554/uav6
+
+
+#with rtp
+#libcamera-vid -v 0 -t 0 --lens-position=0.0 --autofocus-mode=manual --nopreview --framerate 10 --codec h264 --bitrate 250000 --profile baseline --rotation 0  --width 640 --height 480 --inline  -o - | gst-launch-1.0 fdsrc ! queue ! video/x-h264, width=640, height=480, format=I420, framerate=10/1, bitrate=250000 ! decodebin ! videoconvert ! jpegenc ! rtpjpegpay! udpsink host=home.kolesnik.org port=3333
+

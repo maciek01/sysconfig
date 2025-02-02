@@ -42,3 +42,5 @@ git status
 git pull
 cd
 
+
+tail /var/log/syslog|grep janus

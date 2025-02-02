@@ -327,7 +327,7 @@ h264-sample: {
 
 uav1-rtsp: {
         type = "rtsp"
-        id = 99
+        id = 201
         description = "RTSP Test"
         audio = false
         video = true
@@ -336,11 +336,12 @@ uav1-rtsp: {
         rtsp_session_timeout = 0
         rtsp_timeout = 10
         rtsp_conn_timeout = 5
+        rtsp_failcheck = false
 }
 
 uav6-rtsp: {
         type = "rtsp"
-        id = 100
+        id = 206
         description = "RTSP Test"
         audio = false
         video = true
@@ -349,13 +350,14 @@ uav6-rtsp: {
         rtsp_session_timeout = 0
         rtsp_timeout = 10
         rtsp_conn_timeout = 5
+        rtsp_failcheck = false
 }
 
 
 
 uav7-rtsp: {
         type = "rtsp"
-        id = 101
+        id = 207
         description = "RTSP Test"
         audio = false
         video = true
@@ -364,11 +366,12 @@ uav7-rtsp: {
         rtsp_session_timeout = 0
         rtsp_timeout = 10
         rtsp_conn_timeout = 5
+        rtsp_failcheck = false
 }
 
 uav8-rtsp: {
         type = "rtsp"
-        id = 102
+        id = 208
         description = "RTSP Test"
         audio = false
         video = true
@@ -377,4 +380,5 @@ uav8-rtsp: {
         rtsp_session_timeout = 0
         rtsp_timeout = 10
         rtsp_conn_timeout = 5
+        rtsp_failcheck = false
 }

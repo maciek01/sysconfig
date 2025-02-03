@@ -324,7 +324,7 @@ h264-sample: {
 
 
 
-
+#for now keep only 1 drone stream active
 uav1-rtsp: {
         type = "rtsp"
         id = 201
@@ -339,46 +339,3 @@ uav1-rtsp: {
         rtsp_failcheck = false
 }
 
-uav6-rtsp: {
-        type = "rtsp"
-        id = 206
-        description = "RTSP Test"
-        audio = false
-        video = true
-        url = "rtsp://piserver3:8554/uav6"
-        rtsp_reconnect_delay = 5
-        rtsp_session_timeout = 0
-        rtsp_timeout = 10
-        rtsp_conn_timeout = 5
-        rtsp_failcheck = false
-}
-
-
-
-uav7-rtsp: {
-        type = "rtsp"
-        id = 207
-        description = "RTSP Test"
-        audio = false
-        video = true
-        url = "rtsp://piserver3:8554/uav7"
-        rtsp_reconnect_delay = 5
-        rtsp_session_timeout = 0
-        rtsp_timeout = 10
-        rtsp_conn_timeout = 5
-        rtsp_failcheck = false
-}
-
-uav8-rtsp: {
-        type = "rtsp"
-        id = 208
-        description = "RTSP Test"
-        audio = false
-        video = true
-        url = "rtsp://piserver3:8554/uav8"
-        rtsp_reconnect_delay = 5
-        rtsp_session_timeout = 0
-        rtsp_timeout = 10
-        rtsp_conn_timeout = 5
-        rtsp_failcheck = false
-}

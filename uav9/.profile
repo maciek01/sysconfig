@@ -1,1 +1,1 @@
-framework-ubuntu/.profile
+../framework-ubuntu/.profile

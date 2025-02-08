@@ -39,3 +39,12 @@ source /home/maciek/venv-ardupilot/bin/activate
 export PATH=/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH
 export PATH=/home/maciek/ArduPilot/ardupilot/Tools/autotest:$PATH
 export PATH=/usr/lib/ccache:$PATH
+
+
+
+#sync config
+cd ~/sysconfig/$HOSTNAME
+git status
+git pull
+cd
+

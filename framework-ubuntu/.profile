@@ -43,8 +43,8 @@ export PATH=/usr/lib/ccache:$PATH
 
 
 #sync config
-cd ~/sysconfig/$HOSTNAME
-git status
-git pull
-cd
+#cd ~/sysconfig/$HOSTNAME
+#git status
+#git pull
+#cd
 

@@ -1,0 +1,2 @@
+./APPS/QGC/QGroundControl.AppImage
+

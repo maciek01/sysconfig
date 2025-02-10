@@ -1,0 +1,1 @@
+/home/maciek/APPS/EDGETX/EdgeTx_Companion_2.9.2-x86_64.AppImage

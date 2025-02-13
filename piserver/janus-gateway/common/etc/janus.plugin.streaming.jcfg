@@ -325,9 +325,9 @@ h264-sample: {
 
 
 #for now keep only 1 drone stream active
-uav1-rtsp: {
+uav6-rtsp: {
         type = "rtsp"
-        id = 201
+        id = 206
         description = "RTSP Test"
         audio = false
         video = true

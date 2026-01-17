@@ -1,0 +1,1 @@
+/home/pi/uavserver/install-logcleanup.sh

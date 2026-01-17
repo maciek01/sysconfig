@@ -1,1 +1,0 @@
-/home/pi/uavserver/install_pump.sh

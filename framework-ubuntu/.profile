@@ -35,10 +35,15 @@ export VISUAL='vi'
 
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 
-source /home/maciek/venv-ardupilot/bin/activate
-export PATH=/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH
-export PATH=/home/maciek/ArduPilot/ardupilot/Tools/autotest:$PATH
-export PATH=/usr/lib/ccache:$PATH
+echo "WARNING: .bashrc / .profile is settgin up the virtual environment!!!"
+
+#source /home/maciek/venv-platformio/bin/activate
+#deactivate
+
+#source /home/maciek/venv-ardupilot/bin/activate
+#export PATH=/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH
+#export PATH=/home/maciek/ArduPilot/ardupilot/Tools/autotest:$PATH
+#export PATH=/usr/lib/ccache:$PATH
 
 
 
